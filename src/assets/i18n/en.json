@@ -1,0 +1,23 @@
+{
+  "header": {
+    "navbar": {
+      "title": "Brussels Shuttle",
+      "menu": {
+        "services": {
+          "title": "Services",
+          "items": {
+            "taxi": "Taxi Aéorport"
+          }
+        },
+        "book": "Réservation",
+        "faq": "FAQ",
+        "contact": "Contact"
+      }
+    }
+  },
+  "language": {
+    "fr": "French",
+    "en": "English",
+    "nl": "Dutch"
+  }
+}
