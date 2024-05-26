@@ -6,6 +6,7 @@ import {faTaxi} from "@fortawesome/free-solid-svg-icons/faTaxi";
 import {CardServiceComponent} from "./card-service/card-service.component";
 import {NoticesComponent} from "./notices/notices.component";
 import {faMailForward} from "@fortawesome/free-solid-svg-icons/faMailForward";
+import {ReservationApproachComponent} from "./reservation-approach/reservation-approach.component";
 
 @Component({
   selector: 'app-home-page',
@@ -13,7 +14,8 @@ import {faMailForward} from "@fortawesome/free-solid-svg-icons/faMailForward";
   imports: [
     FaIconComponent,
     CardServiceComponent,
-    NoticesComponent
+    NoticesComponent,
+    ReservationApproachComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
