@@ -3,38 +3,41 @@
 
   <!--    Minimal View    -->
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      <div tabindex="0" role="button">
+        <img [src]="'assets/images/bs_logo_horizontal.svg'" class="btn btn-ghost text-xl lg:hidden" height="auto" width="230">
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>Page principale</a></li>
+        <li><a>Réserver une course</a></li>
         <li>
           <a>{{ 'header.navbar.menu.services.title' | translate }}</a>
           <ul class="p-2">
             <li><a>Taxi Aéorport</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a>Nos offres</a></li>
           </ul>
         </li>
-        <li><a>Réservation</a></li>
         <li><a>FAQ</a></li>
       </ul>
     </div>
 
-    <a class="btn btn-ghost text-xl">Brussels Shuttle</a>
+    <a class="btn btn-ghost text-xl hidden lg:block">
+      <img [src]="'assets/images/bs_logo_horizontal.svg'" class="" height="auto" width="230">
+    </a>
   </div>
 
   <!--    Maximum View    -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 text-lg">
-      <li>
+      <li class="z-[1]">
         <details>
           <summary>{{ 'header.navbar.menu.services.title' | translate }}</summary>
           <ul class="w-64">
             <li><a>Taxi Aéorport</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a>Nos Offres</a></li>
           </ul>
         </details>
       </li>
-      <li><a>Réservation</a></li>
+      <li><a>Réserver une course</a></li>
       <li><a>FAQ</a></li>
     </ul>
   </div>
@@ -55,7 +58,6 @@
           @for(lang of languages; track lang) {
             <li><a (click)="changeLanguage(lang)">{{ 'language.'+lang | translate }}</a></li>
           }
-
         </ul>
       </div>
     </ul>
