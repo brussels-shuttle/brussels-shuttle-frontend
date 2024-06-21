@@ -7,8 +7,8 @@
         <img [src]="'assets/images/bs_logo_horizontal.svg'" class="btn btn-ghost text-xl lg:hidden" height="auto" width="230">
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Page principale</a></li>
-        <li><a>Réserver une course</a></li>
+        <li><a routerLink="/">Page principale</a></li>
+        <li><a routerLink="/create-booking">Réserver une course</a></li>
         <li>
           <a>{{ 'header.navbar.menu.services.title' | translate }}</a>
           <ul class="p-2">
@@ -20,7 +20,7 @@
       </ul>
     </div>
 
-    <a class="btn btn-ghost text-xl hidden lg:block">
+    <a class="btn btn-ghost text-xl hidden lg:block" routerLink="/">
       <img [src]="'assets/images/bs_logo_horizontal.svg'" class="" height="auto" width="230">
     </a>
   </div>
@@ -37,7 +37,7 @@
           </ul>
         </details>
       </li>
-      <li><a>Réserver une course</a></li>
+      <li><a routerLink="/create-booking">Réserver une course</a></li>
       <li><a>FAQ</a></li>
     </ul>
   </div>

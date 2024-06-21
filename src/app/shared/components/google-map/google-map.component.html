@@ -1,0 +1,7 @@
+<google-map width="100%" height="100%"
+            [options]="{ mapTypeControl: false, streetViewControl: false }"
+            [center]="center" [zoom]="11">
+  @if(directionResult()){
+    <map-directions-renderer [directions]="directionResult()!"></map-directions-renderer>
+  }
+</google-map>

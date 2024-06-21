@@ -3,8 +3,9 @@ import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faLanguage} from "@fortawesome/free-solid-svg-icons/faLanguage";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
-import {LanguageEnum} from "../../../core/models/languageEnum";
+import {LanguageEnum} from "../../../core/models/enum/language.enum";
 import {NgOptimizedImage} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import {NgOptimizedImage} from "@angular/common";
   imports: [
     TranslateModule,
     FaIconComponent,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

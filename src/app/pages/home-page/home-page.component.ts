@@ -7,6 +7,8 @@ import {CardServiceComponent} from "./card-service/card-service.component";
 import {NoticesComponent} from "./notices/notices.component";
 import {faMailForward} from "@fortawesome/free-solid-svg-icons/faMailForward";
 import {ReservationApproachComponent} from "./reservation-approach/reservation-approach.component";
+import {TitleComponent} from "../../shared/components/title/title.component";
+import {PositionEnum} from "../../core/models/enum/position.enum";
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +17,8 @@ import {ReservationApproachComponent} from "./reservation-approach/reservation-a
     FaIconComponent,
     CardServiceComponent,
     NoticesComponent,
-    ReservationApproachComponent
+    ReservationApproachComponent,
+    TitleComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
@@ -28,4 +31,5 @@ export class HomePageComponent {
   protected readonly faPlaneDeparture = faPlaneDeparture;
   protected readonly faTaxi = faTaxi;
   protected readonly faMailForward = faMailForward;
+  protected readonly PositionEnum = PositionEnum;
 }

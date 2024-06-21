@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import {LayoutComponent} from "./shared/components/layout/layout.component";
 import {TranslateService} from "@ngx-translate/core";
 import defaultLanguage from "./../assets/i18n/fr.json";
-import {LanguageEnum} from "./core/models/languageEnum";
+import {LanguageEnum} from "./core/models/enum/language.enum";
 
 @Component({
   selector: 'app-root',
@@ -23,3 +23,4 @@ export class AppComponent {
 
   }
 }
+

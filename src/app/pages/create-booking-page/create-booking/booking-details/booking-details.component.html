@@ -1,0 +1,54 @@
+<section class="card bg-gray-50 shadow-xl">
+  <div class="card-body">
+    <div class="space-y-3">
+      <h2 class="text-xl font-semibold">Quand souhaitez vous partir ?</h2>
+
+      <tui-input-date
+        [formControl]="startTimeDate"
+        class="b-form"
+        [tuiTextfieldCleaner]="true">
+        Choisissez une date de départ
+        <input
+          class="w-1/2"
+          placeholder="10.10.2024"
+          tuiTextfield
+        />
+      </tui-input-date>
+      <tui-input-time
+        [formControl]="startTimeTime">
+        Heure de départ
+      </tui-input-time>
+    </div>
+
+    <div class="space-y-3 mt-4">
+      <h2 class="text-xl font-semibold">Réservez une course</h2>
+
+      <div>
+        <app-place-auto-complete label="Lieu de prise en charge"
+                                 icon="tuiIconDiscLarge"
+                                 [addressForm]="startAddressForm">
+        </app-place-auto-complete>
+      </div>
+      <div>
+        <app-place-auto-complete label="Destination"
+                                 icon="tuiIconMapPinLarge"
+                                 [addressForm]="endAddressForm"></app-place-auto-complete>
+      </div>
+      <tui-select [formControl]="passengerCountForm"
+                  tuiTextfieldIconLeft="tuiIconUserLarge"
+                  tuiTextfieldSize="m">
+        Nombre de passagers
+        <input
+          placeholder="Choose your hero"
+          tuiTextfield
+        />
+        <tui-data-list-wrapper
+          *tuiDataList
+          [items]="passengerCountItems"
+        ></tui-data-list-wrapper>
+      </tui-select>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,9 @@
+<tui-input  [tuiTextfieldCleaner]="true"
+            [formControl]="inputAddress"
+            tuiTextfieldIcon="{{icon}}">
+  {{ label }}
+  <input tuiTextfield
+         class="bg-transparent py-4 pl-4 appearance-none outline-0 w-full"
+         appGooglePlaces
+         (placeChanged)="onPlaceChanged($event)" />
+</tui-input>

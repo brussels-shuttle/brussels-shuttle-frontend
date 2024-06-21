@@ -37,22 +37,15 @@
 
 <!--    Services Section    -->
 <section class="py-12 px-10 md:px-32 2xl:px-64 bg-gray-50">
-  <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-4xl md:mb-12">
-    <div>
-      <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider uppercase rounded-full bg-sky-500 text-white">
-        Ce que nous offrons
-      </p>
-    </div>
-    <h2 class="max-w-2xl mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-
-      Réserver votre transfert au meilleur prix
-    </h2>
-    <p class="text-base text-gray-500 leading-8">
-      Réservez dès maintenant votre transfert depuis et vers l'aéroport de votre choix, en toute sérénité avec notre service de transfert fiable et professionnel.
-    </p>
+  <div class="my-12 max-w-xl mb-10 md:mx-auto lg:max-w-4xl">
+    <app-title
+               shortTitle="Ce que nous offrons"
+               title="Réserver votre transfert au meilleur prix"
+               description="Réservez dès maintenant votre transfert depuis et vers l'aéroport de votre choix, en toute sérénité avec notre service de transfert fiable et professionnel.">
+    </app-title>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
 
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
     <app-card-service [icon]="faPhoneVolume"
                       [title]="'24/7'"
                       [description]="'Réservez votre transfert privé dès aujourd\'hui et profitez d\'un trajet confortable et sûr à partir de 50€ !'">
@@ -78,6 +71,13 @@
 
 <!-- Approach -->
 <section class=" py-16 mt-2">
+  <div class=" mb-10 max-w-xl md:mx-auto lg:max-w-4xl">
+    <app-title shortTitle="Réservation"
+               title="Disponible à tout moment"
+               description="Réservez votre transfert en ligne dès maintenant et profitez d'une réservation simple et pratique.
+        Nous mettons l'accent sur la satisfaction de nos clients afin que votre voyage se déroule en toute sécurité et dans le respect de normes de conduite strictes.">
+    </app-title>
+  </div>
   <app-reservation-approach></app-reservation-approach>
 </section>
 
@@ -85,16 +85,12 @@
 <!--    Notices Section    -->
 <section class="pt-10 bg-gray-50">
   <!-- Title -->
-  <div class="max-w-xl mx-auto lg:mx-64 2xl:mx-96 text-center lg:text-left lg:max-w-2xl">
-    <div>
-      <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider  uppercase rounded-full bg-sky-500 text-white">
-        Vos Avis
-      </p>
-    </div>
-    <h2 class="font-sans text-3xl font-bold lg:leading-none lg:tracking-tight text-gray-900 sm:text-4xl">
-      Ce que nos clients disent de nous
-    </h2>
+  <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-6xl my-12">
+    <app-title [position]="PositionEnum.Left"
+               shortTitle="Ce que nous offrons"
+               title="Réserver votre transfert au meilleur prix"
+               description="Réservez dès maintenant votre transfert depuis et vers l'aéroport de votre choix, en toute sérénité avec notre service de transfert fiable et professionnel.">
+    </app-title>
   </div>
-  <!-- End Title -->
   <app-notices></app-notices>
 </section>
