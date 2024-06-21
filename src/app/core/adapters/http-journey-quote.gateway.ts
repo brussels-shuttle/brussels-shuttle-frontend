@@ -11,7 +11,7 @@ import {environment} from "../../environments/environment";
 export class HttpJourneyQuoteGateway{
   http = inject(HttpClient);
 
-  private readonly JOURNEY_QUOTE_URL = '/public/journey-quote/';
+  private readonly JOURNEY_QUOTE_URL = '/public/journey-quote';
 
   computeJourneyQuote(request: JourneyQuoteRequest, vehicleModelId: number): Observable<JourneyQuote> {
     return this.http.post<JourneyQuote>(environment.baseUrl + this.JOURNEY_QUOTE_URL + 'by-vehicle-model/' + vehicleModelId, request).pipe(

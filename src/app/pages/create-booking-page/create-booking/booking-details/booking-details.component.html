@@ -1,5 +1,9 @@
-<section class="card bg-gray-50 shadow-xl">
-  <div class="card-body">
+<section class="card bg-gray-50 shadow-xl pt-2 pb-6">
+  <div class="card-actions justify-end pb-1 px-2">
+      <button class="btn btn-sm" (click)="clean()" [disabled]="!isTouched()">Effacer</button>
+
+  </div>
+  <div class="card-body py-0">
     <div class="space-y-3">
       <h2 class="text-xl font-semibold">Quand souhaitez vous partir ?</h2>
 

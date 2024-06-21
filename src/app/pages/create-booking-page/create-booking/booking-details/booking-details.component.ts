@@ -35,7 +35,6 @@ export class BookingDetailsComponent {
   @Input() startTimeForm: FormGroup = new FormGroup({});
   @Input() startAddressForm: FormGroup = new FormGroup({});
   @Input() endAddressForm: FormGroup = new FormGroup({});
-
   @Input() passengerCountForm: FormControl = new FormControl();
 
   private _passengerCountItems: number[] = Array.from({length: 9}, (_, i) => i + 1);
@@ -50,5 +49,16 @@ export class BookingDetailsComponent {
 
   get startTimeTime(): FormControl {
     return this.startTimeForm.get('time') as FormControl;
+  }
+
+  clean(){
+    this.startTimeForm.reset();
+    this.startAddressForm.reset();
+    this.endAddressForm.reset();
+    this.passengerCountForm.reset(1);
+  }
+
+  isTouched(){
+    return this.startTimeForm.touched || this.startAddressForm.touched || this.endAddressForm.touched || this.passengerCountForm.touched;
   }
 }

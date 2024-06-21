@@ -1,26 +1,32 @@
 <section class="lg:flex lg:space-x-10 w-full">
-  <div class="lg:w-1/3">
+  <div class="lg:w-96">
     <app-booking-details [passengerCountForm]="passengerCount"
                          [startAddressForm]="startAddress"
                           [endAddressForm]="endAddress"
                           [startTimeForm]="startTime"
     ></app-booking-details>
-    <button
-      iconRight="tuiIconSearch"
-      tuiButton
-      type="button"
-      (click)="searchJourneyQuote()"
-      class="tui-space_right-3 tui-space_bottom-3 w-full mt-4 shadow-xl"
-      [disabled]="bookingDetailsFormGroup.invalid">
-      Rechercher
-    </button>
+    @defer (when bookingDetailsFormGroup.valid){
+      <button
+        iconRight="tuiIconSearch"
+        tuiButton
+        type="button"
+        (click)="searchJourneyQuote()"
+        class="tui-space_right-3 tui-space_bottom-3 w-full mt-4 shadow-xl"
+        [disabled]="bookingDetailsFormGroup.invalid">
+        Rechercher
+      </button>
+    }
   </div>
 
-  <div>
-<!--    <app-journey-quote [journeyQuote]="null"></app-journey-quote>-->
-  </div>
+  @defer (when journeyQuote != null){
+    <div>
+      <app-journey-quote [journeyQuote]="journeyQuote!"></app-journey-quote>
+    </div>
+  } @loading (minimum 1s){
+    loading...
+  }
 
-  <div class="grid flex-grow lg:w-2/3">
+  <div class="grid flex-grow" style="height: 70vh">
     <app-google-map [startAddress]="placeStartAddress.value"
                     [endAddress]="placeEndAddress.value">
     </app-google-map>
