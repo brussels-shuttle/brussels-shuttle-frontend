@@ -1,5 +1,5 @@
 <section class="lg:flex lg:space-x-10 w-full">
-  <div class="lg:w-96">
+  <div class="lg:w-[450px]">
     <app-booking-details [passengerCountForm]="passengerCount"
                          [startAddressForm]="startAddress"
                           [endAddressForm]="endAddress"
@@ -18,13 +18,21 @@
     }
   </div>
 
-  @defer (when journeyQuote != null){
-    <div>
-      <app-journey-quote [journeyQuote]="journeyQuote!"></app-journey-quote>
-    </div>
-  } @loading (minimum 1s){
-    loading...
+  @if(bookingDetailsFormGroup.valid){
+    @defer (when journeyQuote != null){
+      <div>
+        <app-journey-quote [journeyQuote]="journeyQuote!" [vehicleModelIdForm]="vehicleModelId" [passengerCount]="passengerCount.value"></app-journey-quote>
+      </div>
+    } @loading (minimum 1s){
+      <div class="flex max-w-xl w-full flex-col gap-4">
+        <div class="skeleton h-10 w-48"></div>
+        <div class="skeleton h-24 w-full"></div>
+        <div class="skeleton h-24 w-full"></div>
+        <div class="skeleton h-24 w-full"></div>
+      </div>
+    }
   }
+
 
   <div class="grid flex-grow" style="height: 70vh">
     <app-google-map [startAddress]="placeStartAddress.value"

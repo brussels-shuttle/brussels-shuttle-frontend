@@ -2,15 +2,17 @@ import {VehicleModel} from "./vehicle-model";
 import {Address} from "node:cluster";
 
 export interface JourneyQuote {
+  id: number;
   startAddress: Address;
   endAddress: Address;
   distanceInKilometers: number;
   durationInSeconds: number;
+  expirationTime: Date;
   vehicleModelPrices: VehicleModelPrice[];
 }
 
 export interface VehicleModelPrice {
-  VehicleModel: VehicleModel;
+  vehicleModel: VehicleModel;
   price: number;
 
 }
